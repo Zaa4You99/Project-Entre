@@ -1,3271 +1,417 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-    <title>KOREAN MOGUMO - UBEE PURPLE</title>
-
-
-
-    <style>
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-
-
-
-        body {
-
-            background: #f7f4f8;
-
-            color: #222;
-
-        }
-
-
-
-        /* ================= HEADER ================= */
-
-
-
-        header {
-
-            background: #5b168c;
-
-            color: white;
-
-            padding: 18px 7%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 100;
-
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-
-        }
-
-
-
-        .logo {
-
-            font-size: 26px;
-
-            font-weight: 900;
-
-            letter-spacing: 1px;
-
-        }
-
-
-
-        .logo span {
-
-            color: #ffd43b;
-
-        }
-
-
-
-        .cart-button {
-
-            background: #ffd43b;
-
-            color: #4b0d70;
-
-            border: none;
-
-            padding: 12px 18px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-
-        /* ================= HERO ================= */
-
-
-
-        .hero {
-
-            min-height: 430px;
-
-            background:
-
-                linear-gradient(
-
-                    rgba(78, 13, 115, 0.75),
-
-                    rgba(78, 13, 115, 0.75)
-
-                ),
-
-                url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScoG4nVOgCLQ9gjbarsIp6zsgG2X9TvbNE-pYQQ_TpKlXxulrIAqTKYiDS&s=10");
-
-
-
-            background-size: cover;
-
-            background-position: center;
-
-
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-
-
-            color: white;
-
-            padding: 40px 20px;
-
-        }
-
-
-
-        .hero-content {
-
-            max-width: 750px;
-
-        }
-
-
-
-        .hero h1 {
-
-            font-size: 55px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-
-        .hero p {
-
-            font-size: 20px;
-
-            margin-bottom: 25px;
-
-        }
-
-
-
-        .hero-button {
-
-            display: inline-block;
-
-            background: #ffd43b;
-
-            color: #4d116d;
-
-            padding: 15px 28px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            text-decoration: none;
-
-        }
-
-
-
-        /* ================= MENU ================= */
-
-
-
-        .container {
-
-            width: 90%;
-
-            max-width: 1200px;
-
-            margin: auto;
-
-        }
-
-
-
-        .section-title {
-
-            text-align: center;
-
-            margin: 50px 0 30px;
-
-        }
-
-
-
-        .section-title h2 {
-
-            font-size: 34px;
-
-            color: #58127e;
-
-        }
-
-
-
-        .section-title p {
-
-            color: #777;
-
-            margin-top: 8px;
-
-        }
-
-
-
-        .menu-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-            gap: 25px;
-
-            padding-bottom: 50px;
-
-        }
-
-
-
-        .menu-card {
-
-            background: white;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-
-            transition: 0.3s;
-
-        }
-
-
-
-        .menu-card:hover {
-
-            transform: translateY(-7px);
-
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-        }
-
-
-
-        .menu-image {
-
-            width: 100%;
-
-            height: 230px;
-
-            object-fit: cover;
-
-        }
-
-
-
-        .menu-info {
-
-            padding: 20px;
-
-        }
-
-
-
-        .menu-info h3 {
-
-            color: #501273;
-
-            margin-bottom: 8px;
-
-            font-size: 21px;
-
-        }
-
-
-
-        .menu-info p {
-
-            color: #777;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-
-            min-height: 42px;
-
-        }
-
-
-
-        .price {
-
-            color: #e00070;
-
-            font-weight: bold;
-
-            font-size: 19px;
-
-            margin: 15px 0;
-
-        }
-
-
-
-        .add-button {
-
-            width: 100%;
-
-            border: none;
-
-            background: #5b168c;
-
-            color: white;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-
-        }
-
-
-
-        .add-button:hover {
-
-            background: #7b21b4;
-
-        }
-
-
-
-        /* ================= ORDER TYPE ================= */
-
-
-
-        .order-section {
-
-            background: #fff;
-
-            padding: 45px 20px;
-
-        }
-
-
-
-        .order-options {
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-
-            margin-top: 25px;
-
-        }
-
-
-
-        .order-option {
-
-            border: 2px solid #ddd;
-
-            border-radius: 15px;
-
-            padding: 18px 30px;
-
-            cursor: pointer;
-
-            background: white;
-
-            min-width: 170px;
-
-            text-align: center;
-
-            transition: 0.2s;
-
-        }
-
-
-
-        .order-option:hover {
-
-            border-color: #5b168c;
-
-        }
-
-
-
-        .order-option.active {
-
-            border-color: #5b168c;
-
-            background: #f0e4f7;
-
-            color: #5b168c;
-
-            font-weight: bold;
-
-        }
-
-
-
-        .order-icon {
-
-            font-size: 30px;
-
-            display: block;
-
-            margin-bottom: 8px;
-
-        }
-
-
-
-        /* ================= FOOTER ================= */
-
-
-
-        footer {
-
-            background: #3a0b52;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 30px;
-
-            margin-top: 30px;
-
-        }
-
-
-
-        /* ================= MODAL ================= */
-
-
-
-        .modal {
-
-            position: fixed;
-
-            inset: 0;
-
-            background: rgba(0,0,0,0.65);
-
-            display: none;
-
-            align-items: center;
-
-            justify-content: center;
-
-            z-index: 999;
-
-            padding: 15px;
-
-        }
-
-
-
-        .modal.show {
-
-            display: flex;
-
-        }
-
-
-
-        .modal-content {
-
-            background: white;
-
-            width: 100%;
-
-            max-width: 600px;
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            border-radius: 20px;
-
-            padding: 25px;
-
-            position: relative;
-
-        }
-
-
-
-        .close {
-
-            position: absolute;
-
-            right: 20px;
-
-            top: 15px;
-
-            font-size: 28px;
-
-            cursor: pointer;
-
-            color: #777;
-
-        }
-
-
-
-        .modal-title {
-
-            color: #5b168c;
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        /* ================= CART ================= */
-
-
-
-        .cart-item {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            border-bottom: 1px solid #eee;
-
-            padding: 15px 0;
-
-        }
-
-
-
-        .cart-item h4 {
-
-            color: #4e126e;
-
-        }
-
-
-
-        .quantity {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-        }
-
-
-
-        .quantity button {
-
-            width: 30px;
-
-            height: 30px;
-
-            border: none;
-
-            background: #5b168c;
-
-            color: white;
-
-            border-radius: 7px;
-
-            cursor: pointer;
-
-        }
-
-
-
-        .cart-total {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            font-weight: bold;
-
-            font-size: 20px;
-
-            padding: 20px 0;
-
-        }
-
-
-
-        .checkout-button {
-
-            width: 100%;
-
-            padding: 15px;
-
-            background: #e00070;
-
-            border: none;
-
-            color: white;
-
-            border-radius: 10px;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-
-        /* ================= FORM ================= */
-
-
-
-        .form-group {
-
-            margin-bottom: 17px;
-
-        }
-
-
-
-        .form-group label {
-
-            display: block;
-
-            font-weight: bold;
-
-            margin-bottom: 7px;
-
-        }
-
-
-
-        .form-group input,
-
-        .form-group textarea,
-
-        .form-group select {
-
-            width: 100%;
-
-            padding: 13px;
-
-            border: 1px solid #ddd;
-
-            border-radius: 10px;
-
-            outline: none;
-
-        }
-
-
-
-        .form-group input:focus,
-
-        .form-group textarea:focus,
-
-        .form-group select:focus {
-
-            border-color: #5b168c;
-
-        }
-
-
-
-        .payment-method {
-
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 10px;
-
-            margin-top: 10px;
-
-        }
-
-
-
-        .payment-option {
-
-            border: 2px solid #ddd;
-
-            padding: 13px;
-
-            border-radius: 10px;
-
-            cursor: pointer;
-
-            text-align: center;
-
-        }
-
-
-
-        .payment-option.active {
-
-            border-color: #5b168c;
-
-            background: #f0e4f7;
-
-            color: #5b168c;
-
-            font-weight: bold;
-
-        }
-
-
-
-        .summary {
-
-            background: #f7f4f8;
-
-            padding: 15px;
-
-            border-radius: 10px;
-
-            margin: 15px 0;
-
-        }
-
-
-
-        .summary-row {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            margin: 8px 0;
-
-        }
-
-
-
-        /* ================= SUCCESS ================= */
-
-
-
-        .success {
-
-            text-align: center;
-
-            padding: 30px 10px;
-
-        }
-
-
-
-        .success-icon {
-
-            font-size: 70px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-
-        .success h2 {
-
-            color: #5b168c;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .order-number {
-
-            background: #f1e4f8;
-
-            color: #5b168c;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            margin: 20px 0;
-
-        }
-
-
-
-        /* ================= RESPONSIVE ================= */
-
-
-
-        @media (max-width: 600px) {
-
-
-
-            .hero h1 {
-
-                font-size: 38px;
-
-            }
-
-
-
-            .hero p {
-
-                font-size: 16px;
-
-            }
-
-
-
-            header {
-
-                padding: 15px 5%;
-
-            }
-
-
-
-            .logo {
-
-                font-size: 20px;
-
-            }
-
-
-
-            .payment-method {
-
-                grid-template-columns: 1fr;
-
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6d28a8">
+  <title>Ubi Ungu — Menu & Pembayaran</title>
+  <style>
+    :root {
+      --purple: #6d28a8;
+      --purple-dark: #42136f;
+      --purple-light: #f3e8ff;
+      --pink: #f5d0fe;
+      --ink: #251b2d;
+      --muted: #746879;
+      --white: #fff;
+      --bg: #faf7fc;
+      --border: #eadff0;
+      --green: #16845b;
+      --shadow: 0 12px 34px rgba(69, 24, 93, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px max(20px, calc((100vw - 1160px) / 2));
+      background: rgba(255,255,255,.93); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.5px; }
+    .brand-icon {
+      width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
+      color: white; font-size: 23px; background: linear-gradient(135deg, #9333ea, #581c87);
+    }
+    .brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .3px; }
+    .nav { display: flex; align-items: center; gap: 20px; }
+    .nav a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .nav a:hover { color: var(--purple); }
+    .cart-button, .primary, .secondary, .qty-btn {
+      border: 0; border-radius: 13px; font-weight: 800; transition: .2s ease;
+    }
+    .cart-button { background: var(--purple); color: white; padding: 11px 15px; }
+    .cart-button:hover, .primary:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    main { max-width: 1160px; margin: auto; padding: 28px 20px 64px; }
+    .hero {
+      position: relative; overflow: hidden; display: grid; grid-template-columns: 1.15fr .85fr;
+      align-items: center; gap: 24px; padding: clamp(26px, 5vw, 58px);
+      min-height: 320px; color: white; border-radius: 30px;
+      background: radial-gradient(circle at 80% 20%, rgba(255,255,255,.22), transparent 25%),
+                  linear-gradient(120deg, #4c1d75, #7e22ce 60%, #a855f7);
+      box-shadow: var(--shadow);
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: 12px; font-weight: 800; }
+    h1 { margin: 16px 0 12px; max-width: 570px; font-size: clamp(34px, 5vw, 58px); line-height: 1.04; letter-spacing: -2px; }
+    .hero p { max-width: 490px; color: #f3e8ff; line-height: 1.7; margin: 0 0 22px; }
+    .primary { padding: 13px 18px; color: white; background: var(--purple); }
+    .hero .primary { background: white; color: var(--purple-dark); }
+    .hero .primary:hover { background: #f3e8ff; }
+    .hero-art { position: relative; display: grid; place-items: center; min-height: 210px; }
+    .purple-potato { font-size: clamp(100px, 17vw, 185px); filter: drop-shadow(0 16px 15px rgba(26,0,48,.3)); transform: rotate(-9deg); }
+    .floating-tag { position: absolute; right: 0; bottom: 12px; padding: 12px 15px; border-radius: 16px; color: var(--ink); background: white; font-size: 13px; font-weight: 900; box-shadow: var(--shadow); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 38px 0 18px; }
+    .section-heading h2 { margin: 0; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.8px; }
+    .section-heading p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .product {
+      overflow: hidden; background: white; border: 1px solid var(--border); border-radius: 22px;
+      box-shadow: 0 4px 18px rgba(69,24,93,.035); display: flex; flex-direction: column;
+    }
+    .product-art { min-height: 150px; display: grid; place-items: center; font-size: 78px; background: linear-gradient(135deg, #faf5ff, #f3e8ff); }
+    .product-body { display: flex; flex-direction: column; flex: 1; padding: 17px; }
+    .product h3 { margin: 0 0 7px; font-size: 18px; }
+    .product p { margin: 0 0 16px; min-height: 40px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .price { color: var(--purple); font-size: 17px; font-weight: 900; }
+    .add-button { width: 40px; height: 40px; border: 0; border-radius: 13px; color: white; background: var(--purple); font-size: 23px; font-weight: 700; }
+    .add-button:hover { background: var(--purple-dark); }
+    .content-grid { display: grid; grid-template-columns: 1fr .85fr; gap: 20px; align-items: start; margin-top: 32px; }
+    .panel { padding: 23px; border: 1px solid var(--border); border-radius: 22px; background: white; box-shadow: 0 4px 18px rgba(69,24,93,.035); }
+    .panel h2 { margin: 0 0 5px; font-size: 22px; }
+    .panel-intro { margin: 0 0 20px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .cart-empty { padding: 22px 8px; text-align: center; color: var(--muted); }
+    .cart-empty .emoji { display: block; margin-bottom: 8px; font-size: 38px; }
+    .cart-list { display: grid; gap: 12px; }
+    .cart-item { display: grid; grid-template-columns: 48px 1fr auto; gap: 11px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1eaf5; }
+    .cart-item-art { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 13px; background: var(--purple-light); font-size: 25px; }
+    .cart-item h4 { margin: 0 0 4px; font-size: 14px; }
+    .cart-item small { color: var(--muted); }
+    .qty { display: flex; align-items: center; gap: 8px; margin-top: 7px; }
+    .qty-btn { width: 25px; height: 25px; color: var(--purple); background: var(--purple-light); }
+    .line-total { font-size: 13px; font-weight: 900; white-space: nowrap; }
+    .totals { display: grid; gap: 10px; margin-top: 18px; }
+    .total-row { display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 14px; }
+    .total-row.final { padding-top: 12px; border-top: 1px solid var(--border); color: var(--ink); font-size: 18px; font-weight: 900; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 800; }
+    .form-group input, .form-group select, .form-group textarea {
+      display: block; width: 100%; min-height: 45px; padding: 11px 12px;
+      border: 1px solid #dfd2e8; border-radius: 12px; outline: none; background: white; color: var(--ink);
+    }
+    .form-group textarea { min-height: 78px; resize: vertical; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px #6d28a81a; }
+    .payment-options { display: grid; gap: 9px; }
+    .payment-option { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid var(--border); border-radius: 13px; cursor: pointer; }
+    .payment-option:has(input:checked) { border-color: var(--purple); background: #faf5ff; }
+    .payment-option input { accent-color: var(--purple); }
+    .payment-option strong { display: block; font-size: 13px; }
+    .payment-option small { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .pay-note { margin: 12px 0; padding: 11px 12px; border-radius: 12px; background: #f8f2fc; color: #5d3b6d; font-size: 12px; line-height: 1.55; }
+    .checkout-button { width: 100%; margin-top: 7px; padding: 14px; }
+    .status { display: none; margin-top: 16px; padding: 15px; border-radius: 14px; background: #e8fff4; color: #075e3b; font-size: 13px; line-height: 1.6; }
+    .status.show { display: block; }
+    .footer { padding: 24px 20px; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .toast { position: fixed; left: 50%; bottom: 22px; z-index: 20; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; padding: 12px 17px; border-radius: 999px; color: white; background: #281333; box-shadow: var(--shadow); font-size: 13px; transition: .25s; white-space: nowrap; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-art { min-height: 135px; }
+      .purple-potato { font-size: 115px; }
+      .floating-tag { right: 8%; bottom: 0; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-grid { grid-template-columns: 1fr; }
+      .nav { gap: 12px; }
+    }
+    @media (max-width: 520px) {
+      .topbar { padding: 10px 14px; }
+      .brand-icon { width: 37px; height: 37px; }
+      .brand { font-size: 14px; }
+      .nav a { display: none; }
+      .cart-button { padding: 10px 12px; font-size: 12px; }
+      main { padding: 17px 13px 42px; }
+      .hero { padding: 26px 22px; border-radius: 23px; gap: 6px; }
+      h1 { letter-spacing: -1.2px; }
+      .hero-art { min-height: 112px; }
+      .purple-potato { font-size: 95px; }
+      .floating-tag { font-size: 11px; padding: 9px 11px; right: 0; }
+      .menu-grid { gap: 11px; }
+      .product { border-radius: 17px; }
+      .product-art { min-height: 112px; font-size: 57px; }
+      .product-body { padding: 12px; }
+      .product h3 { font-size: 15px; }
+      .product p { min-height: 54px; font-size: 12px; }
+      .price { font-size: 14px; }
+      .add-button { width: 35px; height: 35px; }
+      .panel { padding: 17px; }
+      .section-heading { margin-top: 29px; }
+    }
+  </style>
 </head>
-
-
-
 <body>
-
-
-
-<!-- ================= HEADER ================= -->
-
-
-
-<header>
-
-
-
-    <div class="logo">
-
-        UBE<span>PURPLE</span> 💜
-
-    </div>
-
-
-
-    <button class="cart-button" onclick="openCart()">
-
-        🛒 Keranjang
-
-        (<span id="cartCount">0</span>)
-
-    </button>
-
-
-
-</header>
-
-
-
-
-
-<!-- ================= HERO ================= -->
-
-
-
-<section class="hero">
-
-
-
-    <div class="hero-content">
-
-
-
-        <h1>Sweet Violet</h1>
-
-
-
-        <p>
-
-            Segarnya Es Ubi Ungu dengan rasa manis,
-
-            creamy dan menyegarkan.
-
-        </p>
-
-
-
-        <a href="#menu" class="hero-button">
-
-            Lihat Menu
-
-        </a>
-
-
-
-    </div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ================= MENU ================= -->
-
-
-
-<section id="menu" class="container">
-
-
-
-    <div class="section-title">
-
-
-
-        <h2>MENU Sweet Violet</h2>
-
-
-
-        <p>
-
-            Pilih minuman favoritmu!
-
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="menu-grid">
-
-
-
-
-
-        <!-- PRODUCT 1 -->
-
-
-
-        <div class="menu-card">
-
-
-
-            <img
-
-                class="menu-image"
-
-                src="https://png.pngtree.com/png-clipart/20250107/original/pngtree-purple-sweet-potato-milk-tea-drink-png-image_6831240.png"
-
-            >
-
-
-
-            <div class="menu-info">
-
-
-
-                <h3>KOREAN MOGUMO
-
-
-
-                <p>
-
-                    Es ubi ungu creamy dengan rasa manis
-
-                    yang lembut dan menyegarkan.
-
-                </p>
-
-
-
-                <div class="price">
-
-                    Rp 10.000
-
-                </div>
-
-
-
-                <button
-
-                    class="add-button"
-
-                    onclick="addToCart('Es Ubi Ungu Original', 10000)"
-
-                >
-
-                    + Tambah
-
-                </button>
-
-
-
-            </div>
-
-
-
+  <header class="topbar">
+    <a class="brand" href="#" style="text-decoration:none;color:inherit">
+      <span class="brand-icon">🍠</span>
+      <span>UBI UNGU<small>Manis, lembut, bikin happy!</small></span>
+    </a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#menu">Menu</a>
+      <a href="#pembayaran">Pembayaran</a>
+      <button class="cart-button" onclick="document.querySelector('#keranjang').scrollIntoView({behavior:'smooth'})">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">💜 Camilan favorit semua usia</span>
+        <h1>Ubi Ungu,<br>Rasa Bahagia.</h1>
+        <p>Nikmati olahan ubi ungu yang lembut, lezat, dan dibuat segar. Pilih menu favoritmu, masukkan ke keranjang, lalu selesaikan pesanan dengan mudah.</p>
+        <button class="primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">Lihat Menu →</button>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi ubi ungu">
+        <div class="purple-potato">🍠</div>
+        <div class="floating-tag">✨ Dibuat dengan cinta</div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="section-heading">
+        <div><h2>Menu Pilihan</h2><p>Pilih camilan yang kamu suka.</p></div>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel" id="keranjang">
+        <h2>🛒 Keranjang Kamu</h2>
+        <p class="panel-intro">Periksa menu dan jumlah pesanan sebelum checkout.</p>
+        <div id="cart-content"></div>
+        <div class="totals" id="cart-totals" style="display:none">
+          <div class="total-row"><span>Subtotal</span><strong id="subtotal">Rp0</strong></div>
+          <div class="total-row"><span>Biaya layanan</span><strong id="service-fee">Rp0</strong></div>
+          <div class="total-row final"><span>Total</span><span id="grand-total">Rp0</span></div>
         </div>
-
-
-
-
-
-        <!-- PRODUCT 2 -->
-
-
-
-        <div class="menu-card">
-
-
-
-            <img
-
-                class="menu-image"
-
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScoG4nVOgCLQ9gjbarsIp6zsgG2X9TvbNE-pYQQ_TpKlXxulrIAqTKYiDS&s=10"
-
-            >
-
-
-
-            <div class="menu-info">
-
-
-
-                <h3>Cheese MOGUMO</h3>
-
-
-
-                <p>
-
-                    Perpaduan ubi ungu creamy dengan
-
-                    topping cheese yang gurih.
-
-                </p>
-
-
-
-                <div class="price">
-
-                    Rp 15.000
-
-                </div>
-
-
-
-                <button
-
-                    class="add-button"
-
-                    onclick="addToCart('Es Ubi Ungu Cheese', 15000)"
-
-                >
-
-                    + Tambah
-
-                </button>
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-        <!-- PRODUCT 3 -->
-
-
-
-        <div class="menu-card">
-
-
-
-            <img
-
-                class="menu-image"
-
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDt7a2qP-vr6AoYsdizRD-JhN918-H4aJAUMx4fbZ7ZA&s=10"
-
-            >
-
-
-
-            <div class="menu-info">
-
-
-
-                <h3>Es Ubi Ungu Boba</h3>
-
-
-
-                <p>
-
-                    Es ubi ungu dengan tambahan boba
-
-                    kenyal yang nikmat.
-
-                </p>
-
-
-
-                <div class="price">
-
-                    Rp 16.000
-
-                </div>
-
-
-
-                <button
-
-                    class="add-button"
-
-                    onclick="addToCart('Es Ubi Ungu Boba', 16000)"
-
-                >
-
-                    + Tambah
-
-                </button>
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-        <!-- PRODUCT 4 -->
-
-
-
-        <div class="menu-card">
-
-
-
-            <img
-
-                class="menu-image"
-
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCEzy4Tb3hu9CIEqfAoycF_j8gW3eRx-EiP7ux0NqhqiLI8JbKD6cI0hM&s=10"
-
-            >
-
-
-
-            <div class="menu-info">
-
-
-
-                <h3>Es Ubi Ungu Special</h3>
-
-
-
-                <p>
-
-                    Es ubi ungu special dengan cream,
-
-                    cheese dan topping pilihan.
-
-                </p>
-
-
-
-                <div class="price">
-
-                    Rp 20.000
-
-                </div>
-
-
-
-                <button
-
-                    class="add-button"
-
-                    onclick="addToCart('Es Ubi Ungu Special', 18000)"
-
-                >
-
-                    + Tambah
-
-                </button>
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-    </div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ================= ORDER TYPE ================= -->
-
-
-
-<section class="order-section">
-
-
-
-    <div class="section-title">
-
-
-
-        <h2>Mau Pesan Bagaimana?</h2>
-
-
-
-        <p>
-
-            Pilih metode pemesanan
-
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="order-options">
-
-
-
-        <div
-
-            class="order-option"
-
-            id="dinein"
-
-            onclick="selectOrderType('Dine In')"
-
-        >
-
-
-
-            <span class="order-icon">🍽️</span>
-
-
-
-            <strong>Dine In</strong>
-
-
-
-            <br>
-
-
-
-            <small>Makan di tempat</small>
-
-
-
-        </div>
-
-
-
-
-
-        <div
-
-            class="order-option"
-
-            id="takeaway"
-
-            onclick="selectOrderType('Take Away')"
-
-        >
-
-
-
-            <span class="order-icon">🥡</span>
-
-
-
-            <strong>Take Away</strong>
-
-
-
-            <br>
-
-
-
-            <small>Bawa pulang</small>
-
-
-
-        </div>
-
-
-
-
-
-        <div
-
-            class="order-option"
-
-            id="delivery"
-
-            onclick="selectOrderType('Delivery')"
-
-        >
-
-
-
-            <span class="order-icon">🛵</span>
-
-
-
-            <strong>Delivery</strong>
-
-
-
-            <br>
-
-
-
-            <small>Antar ke alamat</small>
-
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-</section>
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
-
-
-
-<footer>
-
-
-
-    <h3>KOREAN MOGUMO 8 💜</h3>
-
-
-
-    <p>
-
-        Es Ubi Ungu Keren
-
-    </p>
-
-
-
-    <br>
-
-
-
-    <p>
-
-        © 2026 MOGUMO WALID
-
-    </p>
-
-
-
-</footer>
-
-
-
-
-
-<!-- ================= CART MODAL ================= -->
-
-
-
-<div class="modal" id="cartModal">
-
-
-
-    <div class="modal-content">
-
-
-
-        <span class="close" onclick="closeModal('cartModal')">
-
-            ×
-
-        </span>
-
-
-
-        <h2 class="modal-title">
-
-            🛒 Keranjang Kamu
-
-        </h2>
-
-
-
-        <div id="cartItems"></div>
-
-
-
-        <div class="cart-total">
-
-
-
-            <span>Total</span>
-
-
-
-            <span id="cartTotal">
-
-                Rp 0
-
-            </span>
-
-
-
-        </div>
-
-
-
-        <button
-
-            class="checkout-button"
-
-            onclick="openCheckout()"
-
-        >
-
-            Lanjut ke Pembayaran
-
-        </button>
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-
-<!-- ================= CHECKOUT MODAL ================= -->
-
-
-
-<div class="modal" id="checkoutModal">
-
-
-
-    <div class="modal-content">
-
-
-
-        <span class="close" onclick="closeModal('checkoutModal')">
-
-            ×
-
-        </span>
-
-
-
-        <h2 class="modal-title">
-
-            💳 Checkout
-
-        </h2>
-
-
-
-
-
-        <!-- ORDER TYPE -->
-
-
-
-        <div class="form-group">
-
-
-
-            <label>
-
-                Metode Pesanan
-
-            </label>
-
-
-
-            <select id="checkoutOrderType" onchange="updateCheckout()">
-
-
-
-                <option value="Dine In">
-
-                    🍽️ Dine In
-
-                </option>
-
-
-
-                <option value="Take Away">
-
-                    🥡 Take Away
-
-                </option>
-
-
-
-                <option value="Delivery">
-
-                    🛵 Delivery
-
-                </option>
-
-
-
+      </div>
+
+      <div class="panel" id="pembayaran">
+        <h2>💳 Checkout & Pembayaran</h2>
+        <p class="panel-intro">Isi data pembeli dan pilih metode pembayaran.</p>
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="customer-name">Nama pembeli *</label>
+            <input id="customer-name" name="customer-name" placeholder="Masukkan nama kamu" required maxlength="80">
+          </div>
+          <div class="form-group">
+            <label for="customer-phone">Nomor WhatsApp *</label>
+            <input id="customer-phone" name="customer-phone" type="tel" placeholder="Contoh: 081234567890" required pattern="[0-9+ ()-]{8,20}">
+          </div>
+          <div class="form-group">
+            <label for="order-type">Jenis pesanan *</label>
+            <select id="order-type" required>
+              <option value="Ambil di tempat">Ambil di tempat</option>
+              <option value="Dine in">Makan di tempat</option>
+              <option value="Delivery">Delivery / diantar</option>
             </select>
-
-
-
-        </div>
-
-
-
-
-
-        <!-- CUSTOMER NAME -->
-
-
-
-        <div class="form-group">
-
-
-
-            <label>
-
-                Nama Pemesan
-
-            </label>
-
-
-
-            <input
-
-                type="text"
-
-                id="customerName"
-
-                placeholder="Masukkan nama"
-
-            >
-
-
-
-        </div>
-
-
-
-
-
-        <!-- PHONE -->
-
-
-
-        <div class="form-group">
-
-
-
-            <label>
-
-                Nomor WhatsApp
-
-            </label>
-
-
-
-            <input
-
-                type="tel"
-
-                id="customerPhone"
-
-                placeholder="08xxxxxxxxxx"
-
-            >
-
-
-
-        </div>
-
-
-
-
-
-        <!-- ADDRESS -->
-
-
-
-        <div
-
-            class="form-group"
-
-            id="addressGroup"
-
-        >
-
-
-
-            <label>
-
-                📍 Alamat Pengiriman
-
-            </label>
-
-
-
-            <textarea
-
-                id="customerAddress"
-
-                rows="4"
-
-                placeholder="Masukkan alamat lengkap..."
-
-            ></textarea>
-
-
-
-        </div>
-
-
-
-
-
-        <!-- PAYMENT -->
-
-
-
-        <div class="form-group">
-
-
-
-            <label>
-
-                💳 Metode Pembayaran
-
-            </label>
-
-
-
-            <div class="payment-method">
-
-
-
-
-
-                <div
-
-                    class="payment-option"
-
-                    onclick="selectPayment('QRIS', this)"
-
-                >
-
-                    📱 QRIS
-
-                </div>
-
-
-
-
-
-                <div
-
-                    class="payment-option"
-
-                    onclick="selectPayment('GoPay', this)"
-
-                >
-
-                    💚 GoPay
-
-                </div>
-
-
-
-
-
-                <div
-
-                    class="payment-option"
-
-                    onclick="selectPayment('DANA', this)"
-
-                >
-
-                    🔵 DANA
-
-                </div>
-
-
-
-
-
-                <div
-
-                    class="payment-option"
-
-                    onclick="selectPayment('OVO', this)"
-
-                >
-
-                    🟣 OVO
-
-                </div>
-
-
-
-
-
-                <div
-
-                    class="payment-option"
-
-                    onclick="selectPayment('Cash', this)"
-
-                >
-
-                    💵 Cash
-
-                </div>
-
-
-
-
-
+          </div>
+          <div class="form-group" id="address-group" style="display:none">
+            <label for="customer-address">Alamat pengantaran *</label>
+            <textarea id="customer-address" placeholder="Nama jalan, nomor rumah, patokan"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Metode pembayaran *</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="QRIS (demo)" checked>
+                <span><strong>📱 QRIS</strong><small>Simulasi pembayaran QRIS</small></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="Transfer bank">
+                <span><strong>🏦 Transfer bank</strong><small>Instruksi transfer akan ditampilkan</small></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="Bayar di tempat">
+                <span><strong>💵 Bayar di tempat</strong><small>Bayar saat mengambil atau menerima pesanan</small></span>
+              </label>
             </div>
+            <div class="pay-note" id="payment-note">Mode demo: belum ada transaksi uang sungguhan. QRIS resmi perlu integrasi penyedia pembayaran.</div>
+          </div>
+          <div class="form-group">
+            <label for="order-note">Catatan pesanan (opsional)</label>
+            <textarea id="order-note" placeholder="Contoh: tidak pakai topping, level manis sedang"></textarea>
+          </div>
+          <button type="submit" class="primary checkout-button">Buat Pesanan — <span id="checkout-total">Rp0</span></button>
+          <div class="status" id="order-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <strong>🍠 UBI UNGU</strong><br>
+    Terima kasih sudah mendukung usaha kami 💜<br>
+    <span>Website demo penjualan. Pesanan tersimpan sementara di halaman ini saja.</span>
+  </footer>
+  <div class="toast" id="toast" role="status"></div>
 
+  <script>
+    const products = [
+      { id: 1, name: "Ubi Ungu Kukus", description: "Ubi ungu kukus lembut, manis alami.", price: 10000, emoji: "🍠" },
+      { id: 2, name: "Donat Ubi Ungu", description: "Donat empuk dengan warna ungu cantik.", price: 8000, emoji: "🍩" },
+      { id: 3, name: "Bola Ubi Crispy", description: "Renyah di luar, lembut di dalam.", price: 12000, emoji: "🟣" },
+      { id: 4, name: "Puding Ubi Ungu", description: "Puding creamy yang segar dan lembut.", price: 9000, emoji: "🍮" },
+      { id: 5, name: "Brownies Ubi Ungu", description: "Brownies legit dengan sentuhan ubi ungu.", price: 15000, emoji: "🍰" },
+      { id: 6, name: "Es Susu Ubi Ungu", description: "Minuman susu manis dengan ubi ungu.", price: 13000, emoji: "🥤" }
+    ];
 
-        </div>
+    const cart = {};
+    const rupiah = amount => new Intl.NumberFormat("id-ID", {
+      style: "currency", currency: "IDR", maximumFractionDigits: 0
+    }).format(amount);
+    const getSubtotal = () => products.reduce((sum, product) => sum + product.price * (cart[product.id] || 0), 0);
+    const getItemCount = () => Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+    const serviceFee = () => getSubtotal() > 0 ? 1000 : 0;
+    const getTotal = () => getSubtotal() + serviceFee();
 
-
-
-
-
-        <!-- QRIS AREA -->
-
-
-
-        <div
-
-            id="qrisArea"
-
-            style="display:none;text-align:center;margin:20px 0;"
-
-        >
-
-
-
-            <h3>Scan QRIS</h3>
-
-
-
-            <div
-
-                style="
-
-                margin:15px auto;
-
-                width:200px;
-
-                height:200px;
-
-                background:white;
-
-                border:10px solid #222;
-
-                display:flex;
-
-                align-items:center;
-
-                justify-content:center;
-
-                font-weight:bold;
-
-                "
-
-            >
-
-                QRIS
-
-                <br>
-
-                DEMO
-
+    function renderMenu() {
+      document.getElementById("menu-grid").innerHTML = products.map(product => `
+        <article class="product">
+          <div class="product-art" aria-hidden="true">${product.emoji}</div>
+          <div class="product-body">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <div class="product-bottom">
+              <span class="price">${rupiah(product.price)}</span>
+              <button class="add-button" aria-label="Tambah ${product.name}" onclick="changeQty(${product.id}, 1)">+</button>
             </div>
-
-
-
-            <small>
-
-                QRIS di atas hanya contoh/demo.
-
-                Untuk pembayaran asli,
-
-                hubungkan dengan payment gateway.
-
-            </small>
-
-
-
-        </div>
-
-
-
-
-
-        <!-- SUMMARY -->
-
-
-
-        <div class="summary">
-
-
-
-            <div class="summary-row">
-
-
-
-                <span>
-
-                    Subtotal
-
-                </span>
-
-
-
-                <strong id="checkoutSubtotal">
-
-                    Rp 0
-
-                </strong>
-
-
-
-            </div>
-
-
-
-
-
-            <div
-
-                class="summary-row"
-
-                id="deliveryRow"
-
-            >
-
-
-
-                <span>
-
-                    Ongkir
-
-                </span>
-
-
-
-                <strong id="deliveryFee">
-
-                    Rp 0
-
-                </strong>
-
-
-
-            </div>
-
-
-
-
-
-            <hr>
-
-
-
-
-
-            <div class="summary-row">
-
-
-
-                <strong>
-
-                    Total Bayar
-
-                </strong>
-
-
-
-                <strong id="checkoutTotal">
-
-                    Rp 0
-
-                </strong>
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-
-        <button
-
-            class="checkout-button"
-
-            onclick="processOrder()"
-
-        >
-
-            Bayar Sekarang
-
-        </button>
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-
-<!-- ================= SUCCESS MODAL ================= -->
-
-
-
-<div class="modal" id="successModal">
-
-
-
-    <div class="modal-content">
-
-
-
-        <div class="success">
-
-
-
-            <div class="success-icon">
-
-                🎉
-
-            </div>
-
-
-
-            <h2>
-
-                Pesanan Berhasil!
-
-            </h2>
-
-
-
-            <p>
-
-                Terima kasih sudah memesan
-
-                di UBI PURPLE.
-
-            </p>
-
-
-
-            <div class="order-number">
-
-
-
-                No. Pesanan:
-
-                <br>
-
-
-
-                <span id="orderNumber">
-
-                    UP000000
-
-                </span>
-
-
-
-            </div>
-
-
-
-            <p id="successText"></p>
-
-
-
-            <br>
-
-
-
-            <button
-
-                class="checkout-button"
-
-                onclick="location.reload()"
-
-            >
-
-                Kembali ke Menu
-
-            </button>
-
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-
-<script>
-
-
-
-    /* ================= DATA ================= */
-
-
-
-    let cart = [];
-
-
-
-    let selectedOrderType = "Dine In";
-
-
-
-    let selectedPayment = "";
-
-
-
-
-
-    /* ================= FORMAT RUPIAH ================= */
-
-
-
-    function formatRupiah(number) {
-
-
-
-        return new Intl.NumberFormat(
-
-            "id-ID",
-
-            {
-
-                style: "currency",
-
-                currency: "IDR",
-
-                maximumFractionDigits: 0
-
-            }
-
-        ).format(number);
-
-
-
+          </div>
+        </article>
+      `).join("");
     }
-
-
-
-
-
-    /* ================= ADD CART ================= */
-
-
-
-    function addToCart(name, price) {
-
-
-
-        const existing = cart.find(
-
-            item => item.name === name
-
-        );
-
-
-
-        if(existing) {
-
-
-
-            existing.qty++;
-
-
-
-        } else {
-
-
-
-            cart.push({
-
-                name: name,
-
-                price: price,
-
-                qty: 1
-
-            });
-
-
-
-        }
-
-
-
-        updateCart();
-
-
-
-        alert(
-
-            name +
-
-            " berhasil ditambahkan ke keranjang!"
-
-        );
-
-
-
-    }
-
-
-
-
-
-    /* ================= UPDATE CART ================= */
-
-
-
-    function updateCart() {
-
-
-
-        let totalQty = 0;
-
-
-
-        let total = 0;
-
-
-
-        cart.forEach(item => {
-
-
-
-            totalQty += item.qty;
-
-
-
-            total += item.price * item.qty;
-
-
-
-        });
-
-
-
-
-
-        document.getElementById(
-
-            "cartCount"
-
-        ).innerText = totalQty;
-
-
-
-
-
-        document.getElementById(
-
-            "cartTotal"
-
-        ).innerText = formatRupiah(total);
-
-
-
-
-
-        renderCart();
-
-
-
-    }
-
-
-
-
-
-    /* ================= RENDER CART ================= */
-
-
 
     function renderCart() {
-
-
-
-        const container =
-
-            document.getElementById("cartItems");
-
-
-
-
-
-        if(cart.length === 0) {
-
-
-
-            container.innerHTML = `
-
-                <div style="
-
-                    text-align:center;
-
-                    padding:40px;
-
-                    color:#777;
-
-                ">
-
-                    🛒<br><br>
-
-                    Keranjang masih kosong.
-
-                </div>
-
-            `;
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        container.innerHTML = "";
-
-
-
-
-
-        cart.forEach((item, index) => {
-
-
-
-            container.innerHTML += `
-
-
-
-                <div class="cart-item">
-
-
-
-                    <div>
-
-
-
-                        <h4>
-
-                            ${item.name}
-
-                        </h4>
-
-
-
-                        <small>
-
-                            ${formatRupiah(item.price)}
-
-                        </small>
-
-
-
-                    </div>
-
-
-
-
-
-                    <div class="quantity">
-
-
-
-                        <button
-
-                            onclick="changeQty(${index}, -1)"
-
-                        >
-
-                            -
-
-                        </button>
-
-
-
-                        <strong>
-
-                            ${item.qty}
-
-                        </strong>
-
-
-
-                        <button
-
-                            onclick="changeQty(${index}, 1)"
-
-                        >
-
-                            +
-
-                        </button>
-
-
-
-                    </div>
-
-
-
-                </div>
-
-
-
-            `;
-
-
-
-        });
-
-
-
+      document.getElementById("cart-count").textContent = getItemCount();
+      const chosen = products.filter(product => cart[product.id]);
+      const content = document.getElementById("cart-content");
+      const totals = document.getElementById("cart-totals");
+      if (!chosen.length) {
+        content.innerHTML = '<div class="cart-empty"><span class="emoji">🛍️</span>Keranjang masih kosong.<br>Pilih menu untuk mulai memesan.</div>';
+        totals.style.display = "none";
+      } else {
+        content.innerHTML = `<div class="cart-list">${chosen.map(product => `
+          <div class="cart-item">
+            <div class="cart-item-art">${product.emoji}</div>
+            <div>
+              <h4>${product.name}</h4>
+              <small>${rupiah(product.price)} / item</small>
+              <div class="qty">
+                <button type="button" class="qty-btn" aria-label="Kurangi ${product.name}" onclick="changeQty(${product.id}, -1)">−</button>
+                <strong>${cart[product.id]}</strong>
+                <button type="button" class="qty-btn" aria-label="Tambah ${product.name}" onclick="changeQty(${product.id}, 1)">+</button>
+              </div>
+            </div>
+            <div class="line-total">${rupiah(product.price * cart[product.id])}</div>
+          </div>`).join("")}</div>`;
+        totals.style.display = "grid";
+        document.getElementById("subtotal").textContent = rupiah(getSubtotal());
+        document.getElementById("service-fee").textContent = rupiah(serviceFee());
+        document.getElementById("grand-total").textContent = rupiah(getTotal());
+      }
+      document.getElementById("checkout-total").textContent = rupiah(getTotal());
     }
 
-
-
-
-
-    /* ================= CHANGE QTY ================= */
-
-
-
-    function changeQty(index, amount) {
-
-
-
-        cart[index].qty += amount;
-
-
-
-
-
-        if(cart[index].qty <= 0) {
-
-
-
-            cart.splice(index, 1);
-
-
-
-        }
-
-
-
-
-
-        updateCart();
-
-
-
+    function changeQty(id, amount) {
+      cart[id] = (cart[id] || 0) + amount;
+      if (cart[id] <= 0) delete cart[id];
+      renderCart();
+      document.getElementById("order-status").classList.remove("show");
+      showToast(amount > 0 ? "Menu ditambahkan ke keranjang" : "Jumlah menu diperbarui");
     }
 
-
-
-
-
-    /* ================= OPEN CART ================= */
-
-
-
-    function openCart() {
-
-
-
-        updateCart();
-
-
-
-        document
-
-            .getElementById("cartModal")
-
-            .classList.add("show");
-
-
-
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(window.toastTimeout);
+      window.toastTimeout = setTimeout(() => toast.classList.remove("show"), 2200);
     }
 
+    const orderType = document.getElementById("order-type");
+    const addressGroup = document.getElementById("address-group");
+    const addressInput = document.getElementById("customer-address");
+    orderType.addEventListener("change", () => {
+      const isDelivery = orderType.value === "Delivery";
+      addressGroup.style.display = isDelivery ? "block" : "none";
+      addressInput.required = isDelivery;
+    });
 
+    document.querySelectorAll('input[name="payment"]').forEach(input => {
+      input.addEventListener("change", () => {
+        const notes = {
+          "QRIS (demo)": "Mode demo: belum ada transaksi uang sungguhan. QRIS resmi perlu integrasi penyedia pembayaran.",
+          "Transfer bank": "Mode demo: setelah pesanan dibuat, hubungi penjual untuk mendapatkan nomor rekening dan konfirmasi pembayaran.",
+          "Bayar di tempat": "Bayar langsung kepada penjual saat mengambil pesanan atau saat pesanan diantar."
+        };
+        document.getElementById("payment-note").textContent = notes[input.value];
+      });
+    });
 
+    document.getElementById("checkout-form").addEventListener("submit", event => {
+      event.preventDefault();
+      if (getItemCount() === 0) {
+        showToast("Keranjang masih kosong. Tambahkan menu dulu.");
+        document.getElementById("keranjang").scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      const name = document.getElementById("customer-name").value.trim();
+      const phone = document.getElementById("customer-phone").value.trim();
+      const type = orderType.value;
+      const address = addressInput.value.trim();
+      if (type === "Delivery" && !address) {
+        addressInput.focus();
+        showToast("Isi alamat pengantaran dulu.");
+        return;
+      }
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      const note = document.getElementById("order-note").value.trim();
+      const orderId = "UBI-" + Date.now().toString().slice(-8);
+      const itemsText = products.filter(p => cart[p.id]).map(p => `${p.name} x${cart[p.id]}`).join(", ");
+      const status = document.getElementById("order-status");
+      const paymentInstructions = payment === "QRIS (demo)"
+        ? "QRIS hanya simulasi; belum ada pembayaran sungguhan."
+        : payment === "Transfer bank"
+          ? "Silakan hubungi penjual untuk meminta nomor rekening dan konfirmasi pembayaran."
+          : "Silakan bayar langsung saat pesanan diterima.";
+      status.innerHTML = `<strong>✅ Pesanan berhasil dibuat!</strong><br>
+        Nomor pesanan: <strong>${orderId}</strong><br>
+        Nama: ${escapeHTML(name)}<br>
+        WhatsApp: ${escapeHTML(phone)}<br>
+        Pesanan: ${escapeHTML(itemsText)}<br>
+        Jenis: ${escapeHTML(type)}${type === "Delivery" ? "<br>Alamat: " + escapeHTML(address) : ""}<br>
+        Pembayaran: ${escapeHTML(payment)}<br>
+        Total: <strong>${rupiah(getTotal())}</strong><br>
+        ${note ? "Catatan: " + escapeHTML(note) + "<br>" : ""}
+        <br>${paymentInstructions}<br><small>Catat nomor pesanan ini. Data belum dikirim ke server atau tersimpan permanen.</small>`;
+      status.classList.add("show");
+      status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
 
-
-    /* ================= OPEN CHECKOUT ================= */
-
-
-
-    function openCheckout() {
-
-
-
-        if(cart.length === 0) {
-
-
-
-            alert(
-
-                "Keranjang kamu masih kosong!"
-
-            );
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        closeModal("cartModal");
-
-
-
-
-
-        document
-
-            .getElementById("checkoutModal")
-
-            .classList.add("show");
-
-
-
-
-
-        document.getElementById(
-
-            "checkoutOrderType"
-
-        ).value = selectedOrderType;
-
-
-
-
-
-        updateCheckout();
-
-
-
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      })[character]);
     }
 
-
-
-
-
-    /* ================= SELECT ORDER TYPE ================= */
-
-
-
-    function selectOrderType(type) {
-
-
-
-        selectedOrderType = type;
-
-
-
-
-
-        document
-
-            .querySelectorAll(".order-option")
-
-            .forEach(el =>
-
-                el.classList.remove("active")
-
-            );
-
-
-
-
-
-        if(type === "Dine In") {
-
-
-
-            document
-
-                .getElementById("dinein")
-
-                .classList.add("active");
-
-
-
-        }
-
-
-
-
-
-        if(type === "Take Away") {
-
-
-
-            document
-
-                .getElementById("takeaway")
-
-                .classList.add("active");
-
-
-
-        }
-
-
-
-
-
-        if(type === "Delivery") {
-
-
-
-            document
-
-                .getElementById("delivery")
-
-                .classList.add("active");
-
-
-
-        }
-
-
-
-
-
-        document.getElementById(
-
-            "checkoutOrderType"
-
-        ).value = type;
-
-
-
-
-
-        updateCheckout();
-
-
-
-    }
-
-
-
-
-
-    /* ================= CHECKOUT UPDATE ================= */
-
-
-
-    function updateCheckout() {
-
-
-
-        const type =
-
-            document.getElementById(
-
-                "checkoutOrderType"
-
-            ).value;
-
-
-
-
-
-        let subtotal = 0;
-
-
-
-
-
-        cart.forEach(item => {
-
-
-
-            subtotal +=
-
-                item.price * item.qty;
-
-
-
-        });
-
-
-
-
-
-        let deliveryFee = 0;
-
-
-
-
-
-        if(type === "Delivery") {
-
-
-
-            deliveryFee = 8000;
-
-
-
-            document.getElementById(
-
-                "addressGroup"
-
-            ).style.display = "block";
-
-
-
-            document.getElementById(
-
-                "deliveryRow"
-
-            ).style.display = "flex";
-
-
-
-        } else {
-
-
-
-            document.getElementById(
-
-                "addressGroup"
-
-            ).style.display = "none";
-
-
-
-            document.getElementById(
-
-                "deliveryRow"
-
-            ).style.display = "none";
-
-
-
-        }
-
-
-
-
-
-        const total =
-
-            subtotal + deliveryFee;
-
-
-
-
-
-        document.getElementById(
-
-            "checkoutSubtotal"
-
-        ).innerText =
-
-            formatRupiah(subtotal);
-
-
-
-
-
-        document.getElementById(
-
-            "deliveryFee"
-
-        ).innerText =
-
-            formatRupiah(deliveryFee);
-
-
-
-
-
-        document.getElementById(
-
-            "checkoutTotal"
-
-        ).innerText =
-
-            formatRupiah(total);
-
-
-
-    }
-
-
-
-
-
-    /* ================= PAYMENT ================= */
-
-
-
-    function selectPayment(payment, element) {
-
-
-
-        selectedPayment = payment;
-
-
-
-
-
-        document
-
-            .querySelectorAll(".payment-option")
-
-            .forEach(el =>
-
-                el.classList.remove("active")
-
-            );
-
-
-
-
-
-        element.classList.add("active");
-
-
-
-
-
-        if(payment === "QRIS") {
-
-
-
-            document.getElementById(
-
-                "qrisArea"
-
-            ).style.display = "block";
-
-
-
-        } else {
-
-
-
-            document.getElementById(
-
-                "qrisArea"
-
-            ).style.display = "none";
-
-
-
-        }
-
-
-
-    }
-
-
-
-
-
-    /* ================= PROCESS ORDER ================= */
-
-
-
-    function processOrder() {
-
-
-
-        const name =
-
-            document.getElementById(
-
-                "customerName"
-
-            ).value.trim();
-
-
-
-
-
-        const phone =
-
-            document.getElementById(
-
-                "customerPhone"
-
-            ).value.trim();
-
-
-
-
-
-        const type =
-
-            document.getElementById(
-
-                "checkoutOrderType"
-
-            ).value;
-
-
-
-
-
-        const address =
-
-            document.getElementById(
-
-                "customerAddress"
-
-            ).value.trim();
-
-
-
-
-
-        if(!name) {
-
-
-
-            alert(
-
-                "Silakan masukkan nama pemesan."
-
-            );
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        if(!phone) {
-
-
-
-            alert(
-
-                "Silakan masukkan nomor WhatsApp."
-
-            );
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        if(type === "Delivery" && !address) {
-
-
-
-            alert(
-
-                "Silakan masukkan alamat pengiriman."
-
-            );
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        if(!selectedPayment) {
-
-
-
-            alert(
-
-                "Silakan pilih metode pembayaran."
-
-            );
-
-
-
-            return;
-
-
-
-        }
-
-
-
-
-
-        let subtotal = 0;
-
-
-
-
-
-        cart.forEach(item => {
-
-
-
-            subtotal +=
-
-                item.price * item.qty;
-
-
-
-        });
-
-
-
-
-
-        const deliveryFee =
-
-            type === "Delivery"
-
-            ? 8000
-
-            : 0;
-
-
-
-
-
-        const total =
-
-            subtotal + deliveryFee;
-
-
-
-
-
-        const orderNumber =
-
-            "UP" +
-
-            Math.floor(
-
-                100000 +
-
-                Math.random() * 900000
-
-            );
-
-
-
-
-
-        document.getElementById(
-
-            "orderNumber"
-
-        ).innerText = orderNumber;
-
-
-
-
-
-        document.getElementById(
-
-            "successText"
-
-        ).innerHTML = `
-
-
-
-            Halo <b>${name}</b> 👋
-
-
-
-            <br><br>
-
-
-
-            Pesanan kamu melalui
-
-            <b>${type}</b>
-
-
-
-            <br>
-
-
-
-            Pembayaran:
-
-            <b>${selectedPayment}</b>
-
-
-
-            <br>
-
-
-
-            Total:
-
-            <b>${formatRupiah(total)}</b>
-
-
-
-            <br><br>
-
-
-
-            Kami akan memproses pesanan kamu.
-
-
-
-        `;
-
-
-
-
-
-        closeModal("checkoutModal");
-
-
-
-
-
-        document
-
-            .getElementById("successModal")
-
-            .classList.add("show");
-
-
-
-    }
-
-
-
-
-
-    /* ================= CLOSE MODAL ================= */
-
-
-
-    function closeModal(id) {
-
-
-
-        document
-
-            .getElementById(id)
-
-            .classList.remove("show");
-
-
-
-    }
-
-
-
-
-
-    /* ================= DEFAULT ================= */
-
-
-
-    selectOrderType("Dine In");
-
-
-
-</script>
-
-
-
+    renderMenu();
+    renderCart();
+  </script>
 </body>
-
 </html>
